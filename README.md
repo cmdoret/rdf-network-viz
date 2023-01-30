@@ -1,7 +1,14 @@
 
 # RDF networks visualization
 
+An experiment with interactive network visualizations of RDF graphs.
+
 Based on this template: https://github.com/khuyentran1401/data-science-template/tree/prefect-poetry
+
+
+## Workflow
+
+The repository contains a Prefect workflow which runs [gimie](https://github.com/SDSC-ORD/gimie) on multiple git repositories (listed in `data/raw/sources.yml`). The extracted metadata from all repositories are then combined into a single RDF graph. This graph is converted to a networkx graph and visualized in a notebook (`notebooks/test_holoviews.ipynb`) using [holoviews](https://holoviews.org/) and [bokeh](https://bokeh.org/).
 
 ## Quick Start
 ### Set up the environment
@@ -48,8 +55,3 @@ To auto-generate API document for your project, run:
 ```bash
 make docs_save
 ```
-
-### Run tests when creating a PR
-When creating a PR, the tests in your `tests` folder will automatically run. 
-
-![](images/github_actions.png)
